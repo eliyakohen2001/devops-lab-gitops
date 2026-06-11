@@ -14,4 +14,4 @@ spec:
       serverAddress: http://monitoring-kube-prometheus-prometheus.monitoring.svc.cluster.local:9090
       metricName: container_cpu_usage_seconds_total
       threshold: '0.15' # Scale up if CPU hits 150m
-      query: "sum(rate(container_cpu_usage_seconds_total{namespace='default', pod=~'stress-app.*'}[2m])) by (pod)"
+      query: "sum(rate(container_cpu_usage_seconds_total{namespace='default', pod=~'stress-app.*'}[2m]))"
