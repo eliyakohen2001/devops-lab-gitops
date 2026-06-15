@@ -2,24 +2,35 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: stress-app
+  name: memory-app
+annotations:
+  argocd.argoproj.io/sync-wave: "0"
 spec:
   selector:
     matchLabels:
-      app: stress-app
+      app: memory-app
   template:
     metadata:
       labels:
-        app: stress-app
+        app: memory-app
     spec:
       containers:
       - name: stress-app
-        image: stress-app:1.0.0
+        image: alpine:3.23.4
         imagePullPolicy: Never
         resources:
           requests:
             cpu: "100m"
-            memory: "64Mi"
+            memory: "50Mi"
           limits:
             cpu: "200m"
-            memory: "128Mi"
+            memory: "100Mi"
+          volumes:
+          - name: memory-boomb-script
+            configMap:
+              name: stress-app-memory-boomb-config
+          volumeMounts:
+          - name: memory-boomb-script
+            mountPath: /app/script.sh
+            defaultMode: 755
+          command: ["/bin/bash", "/app/script.sh"]
