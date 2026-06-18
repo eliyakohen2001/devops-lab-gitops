@@ -33,4 +33,4 @@ spec:
           - name: memory-boomb-script
             mountPath: /app/script.sh
             defaultMode: 755
-          command: ["/bin/bash", "/app/script.sh"]
+          # command: ["/bin/bash", "/app/script.sh"]
