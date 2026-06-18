@@ -6,9 +6,10 @@ metadata:
     argocd.argoproj.io/sync-wave: "-1"
 data:
   script.sh: |
-    #/bin/bash
+    #!/bin/bash
+    echo "Starting memory bomb..."
+    my_array=()
     while true; do
-      my_string="apple banana cherry"
-      read -ra my_array <<< "$my_string"
+      my_array+=("apple banana cherry absorbing your RAM")
       sleep 0.1
     done 
