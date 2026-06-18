@@ -16,8 +16,9 @@ spec:
     spec:
       containers:
       - name: stress-app
-        image: alpine:3.23.4
+        image: ubuntu:latest
         imagePullPolicy: IfNotPresent
+        command: ["/bin/bash", "/app/script.sh"]
         resources:
           requests:
             cpu: "100m"
@@ -25,12 +26,11 @@ spec:
           limits:
             cpu: "200m"
             memory: "100Mi"
-          volumes:
-          - name: memory-boomb-script
-            configMap:
-              name: stress-app-memory-boomb-config
-          volumeMounts:
-          - name: memory-boomb-script
-            mountPath: /app/script.sh
-            defaultMode: 755
-          # command: ["/bin/bash", "/app/script.sh"]
+        volumes:
+        - name: memory-boomb-script
+          configMap:
+            name: stress-app-memory-boomb-config
+        volumeMounts:
+        - name: memory-boomb-script
+          mountPath: /app/script.sh
+          defaultMode: 755
