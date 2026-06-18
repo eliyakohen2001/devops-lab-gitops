@@ -2,8 +2,8 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: stress-app-memory-boomb-config
-annotations:
-  argocd.argoproj.io/sync-wave: "-1"
+  annotations:
+    argocd.argoproj.io/sync-wave: "-1"
 data:
   script.sh: |
     #/bin/bash
