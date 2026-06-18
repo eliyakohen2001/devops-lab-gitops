@@ -17,7 +17,7 @@ spec:
       containers:
       - name: stress-app
         image: alpine:3.23.4
-        imagePullPolicy: IfnotPresent
+        imagePullPolicy: IfNotPresent
         resources:
           requests:
             cpu: "100m"
