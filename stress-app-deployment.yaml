@@ -16,7 +16,7 @@ spec:
         app: memory-app
     spec:
       containers:
-      - name: stress-app
+      - name: memoru-app
         image: ubuntu:latest
         imagePullPolicy: IfNotPresent
         command: ["/bin/bash", "/app/memory-boomb-script.sh"]
