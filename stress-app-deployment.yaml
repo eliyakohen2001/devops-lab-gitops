@@ -19,7 +19,7 @@ spec:
       - name: stress-app
         image: ubuntu:latest
         imagePullPolicy: IfNotPresent
-        command: ["/bin/bash", "/app/script.sh"]
+        command: ["/bin/bash", "/app/memory-boomb-script.sh"]
         resources:
           requests:
             cpu: "100m"
@@ -31,7 +31,7 @@ spec:
         - name: memory-boomb-script
           configMap:
             name: stress-app-memory-boomb-config
+          defaultMode: 755
         volumeMounts:
         - name: memory-boomb-script
-          mountPath: /app/script.sh
-          defaultMode: 755
+          mountPath: /app
