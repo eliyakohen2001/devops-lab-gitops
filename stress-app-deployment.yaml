@@ -16,7 +16,7 @@ spec:
         app: memory-app
     spec:
       containers:
-      - name: memoru-app
+      - name: memory-app
         image: ubuntu:latest
         imagePullPolicy: IfNotPresent
         command: ["/bin/bash", "/app/memory-boomb-script.sh"]
