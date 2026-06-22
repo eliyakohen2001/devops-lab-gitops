@@ -31,7 +31,7 @@ spec:
         - name: memory-boomb-script
           configMap:
             name: stress-app-memory-boomb-config
-          defaultMode: 755
+            defaultMode: 755
         volumeMounts:
         - name: memory-boomb-script
           mountPath: /app
