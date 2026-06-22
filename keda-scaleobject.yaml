@@ -12,7 +12,7 @@ spec:
   maxReplicaCount: 3
   triggers:
   - type: memory
-    metricType: utilization
+    metricType: Utilization
     metadata:
-      value: 35Mi
+      value: "70"
       containerName: "memory-app"
